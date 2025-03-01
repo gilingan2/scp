@@ -1083,12 +1083,16 @@ const Home: NextLayoutPage<HomeProps> = (props) => {
           name="description"
           content={`Stems connects artists worldwide by facilitating collaboration with producers and fans. Submit your beats directly to artists and let fans vote on their favorite submissions`}
         />
+        <meta
+          property="og:title"
+          content={`Send a beat directly on Stems`}
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           property="og:image"
           content={
             //   artistSubmission.ArtistSubmissionsSocials?.imageUrl ||
-            `${process.env.NEXT_PUBLIC_API_URL}assets/og-image.png`
+            `${process.env.NEXT_PUBLIC_API_URL}assets/BG.png`
           }
         />
         <meta property="og:type" content="website" />
