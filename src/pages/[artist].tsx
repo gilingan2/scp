@@ -1128,16 +1128,7 @@ Home.getLayout = (page) => <SimpleLayout artist>{page}</SimpleLayout>;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { req, query } = context;
-  const user = await getUser(req as NextApiRequest);
-
-  const ssg = createServerSideHelpers({
-    router: appRouter,
-    ctx: {
-      user,
-      prisma,
-      session: "",
-    },
-  });
+ 
   const id = query.artist || "755ac230-85f0-468c-9c0d-251160b917b6";
   let artistData = null;
   let tracksData = null;
