@@ -1076,18 +1076,21 @@ const Home: NextLayoutPage<HomeProps> = (props) => {
       <Head>
         <title>Stems - Music Creating Platform</title>
         <meta
-          property="og:title"
-          content={`Send a beat directly on Stems`}
-        />
-        <meta
           name="description"
           content={`Stems connects artists worldwide by facilitating collaboration with producers and fans. Submit your beats directly to artists and let fans vote on their favorite submissions`}
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+
+       
+        <meta property="og:url" content={`${process.env.NEXT_PUBLIC_API_URL}${artist}`} />
+        <meta property="og:type" content="website" />
         <meta
           property="og:title"
           content={`Send a beat directly on Stems`}
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:description" content="Stems connects artists worldwide by facilitating collaboration with producers and fans. Submit your beats directly to artists and let fans vote on their favorite submissions"/>
+
         <meta
           property="og:image"
           content={
@@ -1095,9 +1098,17 @@ const Home: NextLayoutPage<HomeProps> = (props) => {
             `${process.env.NEXT_PUBLIC_API_URL}assets/BG.png`
           }
         />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={`${process.env.NEXT_PUBLIC_API_URL}${artist}`} />
-        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:image:width" content="2589"/>
+        <meta property="og:image:height" content="1839"/>
+
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta property="twitter:domain" content="scp-ten.vercel.app"/>
+        <meta property="twitter:url" content={`${process.env.NEXT_PUBLIC_API_URL}${artist}`}/>
+        <meta name="twitter:title" content="Send a beat directly on Stems"/>
+        <meta name="twitter:description" content="Stems connects artists worldwide by facilitating collaboration with producers and fans. Submit your beats directly to artists and let fans vote on their favorite submissions"/>
+        <meta name="twitter:image" content={`${process.env.NEXT_PUBLIC_API_URL}assets/BG.png`}/>
+
+
       </Head>
       {rendered && artistSubmission && !isLoading && (
         //ADDED TRACKS - passing tracks to the provider
