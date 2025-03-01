@@ -1088,11 +1088,11 @@ const Home: NextLayoutPage<HomeProps> = (props) => {
           property="og:image"
           content={
             //   artistSubmission.ArtistSubmissionsSocials?.imageUrl ||
-            "https://0xstems.xyz/assets/og-image.png"
+            `${process.env.NEXT_PUBLIC_API_URL}assets/og-image.png`
           }
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://0xstems.xyz/${artist}`} />
+        <meta property="og:url" content={`${process.env.NEXT_PUBLIC_API_URL}${artist}`} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {rendered && artistSubmission && !isLoading && (
