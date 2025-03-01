@@ -6,7 +6,7 @@ import type { NextApiRequest, NextApiResponse } from 'next/types';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { artist } = req.query;
-
+  console.log("gasken lur")
   try {
 
     const artistData = await prisma.artistSubmissions.findUnique({
@@ -37,10 +37,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       ArtistSubmissionsSocials,
       tracksData
     }
-    console.log(tracksData)
+    console.log("ini jika jadi", tracksData)
     res.json(responseData);
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Error fetching data' });
+    console.error('ini error prisma', error);
+    res.status(500).json({ message: 'Error fetching data', error: error });
   }
 }

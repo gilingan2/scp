@@ -1150,7 +1150,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   } catch (error) {
     console.error('Error fetching data:', error);
   }
- 
+  console.log("ini artist data", artistData)
+  console.log("ini track data", tracksData)
   return {
     props: {
       // trpcState: ssg.dehydrate(),
